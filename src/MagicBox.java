@@ -6,6 +6,7 @@ import java.util.Random;
 public class MagicBox<T> {
     protected int size;
     protected T[] box;
+    public static Random random = new Random();
 
     public MagicBox(Class<T> tClass, int size) {
         this.size = size;
@@ -41,7 +42,6 @@ public class MagicBox<T> {
         if (empty > 0) {
             throw new RuntimeException("Box is not full. Empty cells: " + empty);
         } else {
-            Random random = new Random();
             int randomInt = random.nextInt(size);
             return box[randomInt];
         }
